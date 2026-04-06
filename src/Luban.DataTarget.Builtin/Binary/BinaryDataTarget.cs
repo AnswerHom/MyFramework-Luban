@@ -42,6 +42,6 @@ public class BinaryDataTarget : DataTargetBase
     {
         var bytes = new ByteBuf();
         WriteList(table, records, bytes);
-        return CreateOutputFile($"{table.OutputDataFile}.{OutputFileExt}", bytes.CopyData());
+        return CreateOutputFile($"{table.GetFolderName()}/{table.OutputDataFile}.{OutputFileExt}", bytes.CopyData());
     }
 }

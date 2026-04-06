@@ -39,7 +39,7 @@ public class BinaryRecordOffsetLengthDataTarget : DataTargetBase
         WriteList(table, records, bytes);
         return new OutputFile()
         {
-            File = $"{table.OutputDataFile}_offset.{OutputFileExt}",
+            File = $"{table.GetFolderName()}/{table.OutputDataFile}_offset.{OutputFileExt}",
             Content = bytes.CopyData(),
         };
     }

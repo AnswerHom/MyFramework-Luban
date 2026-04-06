@@ -177,4 +177,11 @@ public class DefTable : DefTypeBase
             }
         }
     }
+
+    public string GetFolderName()
+    {
+        var parts = FullName.Split('.');
+        if (parts.Length == 0) return FullName;
+        return parts[0];
+    }
 }
